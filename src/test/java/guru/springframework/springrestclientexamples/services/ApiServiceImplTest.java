@@ -1,16 +1,14 @@
 package guru.springframework.springrestclientexamples.services;
 
-import guru.springframework.api.domain.User;
-import org.junit.Before;
+import com.fasterxml.jackson.databind.JsonNode;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.web.client.RestTemplate;
 
-import java.util.List;
-
-import static org.junit.Assert.assertEquals;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by ccabo 8/22/19
@@ -19,18 +17,33 @@ import static org.junit.Assert.assertEquals;
 @SpringBootTest
 public class ApiServiceImplTest {
 
-    @Autowired
-    ApiService apiService;
-
-    @Before
-    public void setUp() throws Exception{
-    }
+    public static final String API_ROOT = "https://virtserver.swaggerhub.com/CesarNicolasCabo/ApiTest/1.0.0";
 
     @Test
-    public void testGetUsers() throws Exception{
+    public void getInventory() throws Exception{
+        String apiUrl = API_ROOT + "/inventory/";
 
-        List<User> users = apiService.getUser(4);
+        RestTemplate restTemplate = new RestTemplate();
 
-        assertEquals(4, users.size());
+        JsonNode jsonNode = restTemplate.getForObject(apiUrl, JsonNode.class);
+
+        System.out.println("Response: ");
+        System.out.println(jsonNode.toString());
     }
+
+    // FIX THIS
+    /*@Test
+    public void createNewInventoryItem() {
+        String apiUrl = API_ROOT + "/inventory/";
+
+        RestTemplate restTemplate = new RestTemplate();
+
+        Map<String, Object> postMap = new HashMap<>();
+        postMap.put("name", "Widget Adapter 2");
+
+        JsonNode jsonNode = restTemplate.postForObject(apiUrl, postMap, JsonNode.class);
+
+        System.out.println("Response: ");
+        System.out.println(jsonNode.toString());
+    }*/
 }
