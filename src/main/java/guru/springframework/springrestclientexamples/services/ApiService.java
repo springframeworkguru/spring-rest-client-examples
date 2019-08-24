@@ -14,4 +14,6 @@ import java.util.List;
 public interface ApiService {
 
     List<User> getUsers(Integer limit);
+
+    Flux<User> getUsers(Mono<Integer> limit);
 }
