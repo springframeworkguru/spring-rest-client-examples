@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Users</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"
+          th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}">
+
+    <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<!--/*@thymesVar id="users" type="java.util.List"*/-->
+<!--/*@thymesVar id="user" type="guru.springframework.api.domain.User"*/-->
+<div class="container-fluid" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-primary">
+
+                <div class="panel-heading">
+                    <h1 class="panel-title">Users from API</h1>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive" th:if="${not #lists.isEmpty(users)}">
+                        <table class="table table-hover ">
+                            <thead class="thead-inverse">
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Gender</th>
+                                <th>Email</th>
+                                <th>Language</th>
+                                <th>Phone</th>
+                            </tr>
+                            </thead>
+                            <tr th:remove="all">
+                                <td>Joe</td>
+                                <td>Buck</td>
+                                <td>Male</td>
+                                <td>foo@example.com</td>
+                                <td>English</td>
+                                <td>132-123-1234</td>
+                            </tr>
+                            <tr th:remove="all">
+                                <td>Joe</td>
+                                <td>Buck</td>
+                                <td>Male</td>
+                                <td>foo@example.com</td>
+                                <td>English</td>
+                                <td>132-123-1234</td>
+                            </tr>
+                            <tr th:each="user : ${users}">
+                                <td th:text="${user.name.first}">Joe</td>
+                                <td th:text="${user.name.last}">Buck</td>
+                                <td th:text="${user.gender}">Male</td>
+                                <td th:text="${user.email}">foo@example.com</td>
+                                <td th:text="${user.language}">English</td>
+                                <td th:text="${user.phone}">132-123-1234</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
