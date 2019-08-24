@@ -30,20 +30,4 @@ public class ApiServiceImplTest {
         System.out.println("Response: ");
         System.out.println(jsonNode.toString());
     }
-
-    // FIX THIS
-    /*@Test
-    public void createNewInventoryItem() {
-        String apiUrl = API_ROOT + "/inventory/";
-
-        RestTemplate restTemplate = new RestTemplate();
-
-        Map<String, Object> postMap = new HashMap<>();
-        postMap.put("name", "Widget Adapter 2");
-
-        JsonNode jsonNode = restTemplate.postForObject(apiUrl, postMap, JsonNode.class);
-
-        System.out.println("Response: ");
-        System.out.println(jsonNode.toString());
-    }*/
 }
