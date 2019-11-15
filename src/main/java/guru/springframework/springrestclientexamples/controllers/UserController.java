@@ -47,7 +47,22 @@ public class UserController {
                 apiService
                         .getUsers(serverWebExchange
                                 .getFormData()
-                                .map(data -> new Integer(data.getFirst("limit")))));
+                                .map(data -> {
+                                    String limitInput = data.getFirst("limit");
+                                    log.debug("Received Limit value: " + limitInput);
+                                    Integer limit;
+                                    try {
+                                        limit = new Integer(limitInput);
+                                    } catch (NumberFormatException e) {
+                                        limit = 0;
+                                    }
+                                    //default if null or zero
+                                    if (limit == 0) {
+                                        log.debug("Setting limit to default of 10");
+                                        limit = 10;
+                                    }
+                                    return limit;
+                                })));
 
         return "userlist";
     }
