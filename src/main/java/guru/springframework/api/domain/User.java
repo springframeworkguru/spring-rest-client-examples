@@ -1,113 +1,112 @@
-
 package guru.springframework.api.domain;
 
-import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
+public class User {
+	private String nat;
+	private String gender;
+	private String phone;
+	private Dob dob;
+	private Name name;
+	private Registered registered;
+	private Location location;
+	private Id id;
+	private Login login;
+	private String cell;
+	private String email;
+	private Picture picture;
 
-public class User implements Serializable
-{
+	public void setNat(String nat){
+		this.nat = nat;
+	}
 
-    private String gender;
-    private Name name;
-    private Location location;
-    private String email;
-    private Login login;
-    private String phone;
-    private Job job;
-    private Billing billing;
-    private String language;
-    private String currency;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+	public String getNat(){
+		return nat;
+	}
 
-    private final static long serialVersionUID = 270727596527329664L;
+	public void setGender(String gender){
+		this.gender = gender;
+	}
 
-    public String getGender() {
-        return gender;
-    }
+	public String getGender(){
+		return gender;
+	}
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
+	public void setPhone(String phone){
+		this.phone = phone;
+	}
 
-    public Name getName() {
-        return name;
-    }
+	public String getPhone(){
+		return phone;
+	}
 
-    public void setName(Name name) {
-        this.name = name;
-    }
+	public void setDob(Dob dob){
+		this.dob = dob;
+	}
 
-    public Location getLocation() {
-        return location;
-    }
+	public Dob getDob(){
+		return dob;
+	}
 
-    public void setLocation(Location location) {
-        this.location = location;
-    }
+	public void setName(Name name){
+		this.name = name;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public Name getName(){
+		return name;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public void setRegistered(Registered registered){
+		this.registered = registered;
+	}
 
-    public Login getLogin() {
-        return login;
-    }
+	public Registered getRegistered(){
+		return registered;
+	}
 
-    public void setLogin(Login login) {
-        this.login = login;
-    }
+	public void setLocation(Location location){
+		this.location = location;
+	}
 
-    public String getPhone() {
-        return phone;
-    }
+	public Location getLocation(){
+		return location;
+	}
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+	public void setId(Id id){
+		this.id = id;
+	}
 
-    public Job getJob() {
-        return job;
-    }
+	public Id getId(){
+		return id;
+	}
 
-    public void setJob(Job job) {
-        this.job = job;
-    }
+	public void setLogin(Login login){
+		this.login = login;
+	}
 
-    public Billing getBilling() {
-        return billing;
-    }
+	public Login getLogin(){
+		return login;
+	}
 
-    public void setBilling(Billing billing) {
-        this.billing = billing;
-    }
+	public void setCell(String cell){
+		this.cell = cell;
+	}
 
-    public String getLanguage() {
-        return language;
-    }
+	public String getCell(){
+		return cell;
+	}
 
-    public void setLanguage(String language) {
-        this.language = language;
-    }
+	public void setEmail(String email){
+		this.email = email;
+	}
 
-    public String getCurrency() {
-        return currency;
-    }
+	public String getEmail(){
+		return email;
+	}
 
-    public void setCurrency(String currency) {
-        this.currency = currency;
-    }
+	public void setPicture(Picture picture){
+		this.picture = picture;
+	}
 
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
-
+	public Picture getPicture(){
+		return picture;
+	}
 }

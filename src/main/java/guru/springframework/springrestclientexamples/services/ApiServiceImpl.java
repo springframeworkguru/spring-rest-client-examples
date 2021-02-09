@@ -29,9 +29,9 @@ public class ApiServiceImpl implements  ApiService {
 
         UriComponentsBuilder uriBuilder = UriComponentsBuilder
                 .fromUriString(api_url)
-                .queryParam("limit", limit);
+                .queryParam("result", limit);
 
         UserData userData = restTemplate.getForObject(uriBuilder.toUriString(), UserData.class);
-        return userData.getData();
+        return userData.getResults();
     }
 }

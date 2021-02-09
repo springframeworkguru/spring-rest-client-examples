@@ -2,18 +2,23 @@ package guru.springframework.api.domain;
 
 import java.util.List;
 
-/**
- * Created by jt on 9/21/17.
- */
 public class UserData {
+	private List<User> results;
+	private Info info;
 
-    List<User> data;
+	public void setResults(List<User> results){
+		this.results = results;
+	}
 
-    public List<User> getData() {
-        return data;
-    }
+	public List<User> getResults(){
+		return results;
+	}
 
-    public void setData(List<User> data) {
-        this.data = data;
-    }
+	public void setInfo(Info info){
+		this.info = info;
+	}
+
+	public Info getInfo(){
+		return info;
+	}
 }

@@ -1,58 +1,67 @@
-
 package guru.springframework.api.domain;
 
-import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
+public class Location{
+	private String country;
+	private String city;
+	private Street street;
+	private Timezone timezone;
+	private int postcode;
+	private Coordinates coordinates;
+	private String state;
 
-public class Location implements Serializable
-{
+	public void setCountry(String country){
+		this.country = country;
+	}
 
-    private String street;
-    private String city;
-    private String state;
-    private String postcode;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = -3532048267747973846L;
+	public String getCountry(){
+		return country;
+	}
 
-    public String getStreet() {
-        return street;
-    }
+	public void setCity(String city){
+		this.city = city;
+	}
 
-    public void setStreet(String street) {
-        this.street = street;
-    }
+	public String getCity(){
+		return city;
+	}
 
-    public String getCity() {
-        return city;
-    }
+	public void setStreet(Street street){
+		this.street = street;
+	}
 
-    public void setCity(String city) {
-        this.city = city;
-    }
+	public Street getStreet(){
+		return street;
+	}
 
-    public String getState() {
-        return state;
-    }
+	public void setTimezone(Timezone timezone){
+		this.timezone = timezone;
+	}
 
-    public void setState(String state) {
-        this.state = state;
-    }
+	public Timezone getTimezone(){
+		return timezone;
+	}
 
-    public String getPostcode() {
-        return postcode;
-    }
+	public void setPostcode(int postcode){
+		this.postcode = postcode;
+	}
 
-    public void setPostcode(String postcode) {
-        this.postcode = postcode;
-    }
+	public int getPostcode(){
+		return postcode;
+	}
 
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
+	public void setCoordinates(Coordinates coordinates){
+		this.coordinates = coordinates;
+	}
 
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
+	public Coordinates getCoordinates(){
+		return coordinates;
+	}
 
+	public void setState(String state){
+		this.state = state;
+	}
+
+	public String getState(){
+		return state;
+	}
 }
