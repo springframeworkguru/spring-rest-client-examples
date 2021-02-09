@@ -29,7 +29,7 @@ public class RestTemplateExamples {
 
         JsonNode jsonNode = restTemplate.getForObject(apiUrl, JsonNode.class);
 
-        System.out.println("Response");
+        System.out.println("UserData");
         System.out.println(jsonNode.toString());
     }
 
@@ -41,7 +41,7 @@ public class RestTemplateExamples {
 
         JsonNode jsonNode = restTemplate.getForObject(apiUrl, JsonNode.class);
 
-        System.out.println("Response");
+        System.out.println("UserData");
         System.out.println(jsonNode.toString());
     }
 
@@ -58,7 +58,7 @@ public class RestTemplateExamples {
 
         JsonNode jsonNode = restTemplate.postForObject(apiUrl, postMap, JsonNode.class);
 
-        System.out.println("Response");
+        System.out.println("UserData");
         System.out.println(jsonNode.toString());
     }
 
@@ -77,7 +77,7 @@ public class RestTemplateExamples {
 
         JsonNode jsonNode = restTemplate.postForObject(apiUrl, postMap, JsonNode.class);
 
-        System.out.println("Response");
+        System.out.println("UserData");
         System.out.println(jsonNode.toString());
 
         String customerUrl = jsonNode.get("customer_url").textValue();
@@ -112,7 +112,7 @@ public class RestTemplateExamples {
 
         JsonNode jsonNode = restTemplate.postForObject(apiUrl, postMap, JsonNode.class);
 
-        System.out.println("Response");
+        System.out.println("UserData");
         System.out.println(jsonNode.toString());
 
         String customerUrl = jsonNode.get("customer_url").textValue();
@@ -155,7 +155,7 @@ public class RestTemplateExamples {
 
         JsonNode jsonNode = restTemplate.postForObject(apiUrl, postMap, JsonNode.class);
 
-        System.out.println("Response");
+        System.out.println("UserData");
         System.out.println(jsonNode.toString());
 
         String customerUrl = jsonNode.get("customer_url").textValue();
@@ -194,7 +194,7 @@ public class RestTemplateExamples {
 
         JsonNode jsonNode = restTemplate.postForObject(apiUrl, postMap, JsonNode.class);
 
-        System.out.println("Response");
+        System.out.println("UserData");
         System.out.println(jsonNode.toString());
 
         String customerUrl = jsonNode.get("customer_url").textValue();

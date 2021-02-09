@@ -32,12 +32,12 @@ public class UserController {
 
         MultiValueMap<String, String> map = serverWebExchange.getFormData().block();
 
-        Integer limit = new Integer(map.get("limit").get(0));
+        Integer limit = new Integer(map.get("result").get(0));
 
-        log.debug("Received Limit value: " + limit);
+//        log.debug("Received Limit value: " + limit);
         //default if null or zero
         if(limit == null || limit == 0){
-            log.debug("Setting limit to default of 10");
+//            log.debug("Setting limit to default of 10");
             limit = 10;
         }
 
