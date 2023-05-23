@@ -2,9 +2,6 @@ package guru.springframework.api.domain;
 
 import java.util.List;
 
-/**
- * Created by jt on 9/21/17.
- */
 public class UserData {
 
     List<User> data;
